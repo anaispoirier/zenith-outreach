@@ -1,0 +1,113 @@
+.main {
+    background: #003c6c;
+    background: linear-gradient(180deg, #014465 0%, #1e5661 25%, #80cbc4 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+}
+
+.main_header {
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.main_content {
+    margin-top: 102px;
+    flex: 1;
+    // padding: 20px 40px;
+    background-image: url("../public/stars2.png");
+    background-size: 1000px;
+    background-repeat: repeat-x repeat-y;
+    overflow: scroll;
+}
+
+.background_stars_overlay {
+    height: 100%;
+    width: 100%;
+    background-image: url("../public/stars2.png");
+    background-size: 1000px;
+    background-repeat: repeat-x repeat-y;
+}
+
+.header_container {
+    // background-color: salmon;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_pages {
+    display: flex;
+    font-family: 'Karla';
+}
+
+.header_page {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
+    margin-right: 25px;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover{
+        opacity: 0.7;
+        transform: scale(0.97);
+    }
+
+}
+
+.header_title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Raleway';
+}
+
+.home_container {
+    height: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.home_timeline_container{
+    background-color: #103628;
+    background: linear-gradient(100deg, #103628aa 0%, #87d7af11 100%);
+    width: 80%;
+    max-width: 1020px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.04rem;
+}
+
+.home_title {
+    padding: 40px;
+    font-size: 5rem;
+    font-style: italic;
+    font-weight: 700;
+    font-family: 'Raleway';
+    padding-bottom: 20px;
+}
+
+.test {
+    display: flex;
+}
+
+.test_image {
+    background-image: url("../public/test.png");
+    height: 400px;
+    width: 400px;
+    background-size: cover;
+    margin: -40px 0 0 -220px;
+    transform: rotate(10deg);
+}
