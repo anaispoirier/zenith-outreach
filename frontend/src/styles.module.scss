@@ -1,11 +1,21 @@
+.discover_container {
+    color: #014465;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
 .main {
-    background: #003c6c;
-    background: linear-gradient(180deg, #014465 0%, #1e5661 25%, #80cbc4 100%);
     color: #fff;
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: #003c6c;
+    // background-color: ;
     overflow: scroll;
+    background-image: linear-gradient(180deg, #014465 0%, #1e5661 25%, #80cbc4 100%), url("../public/stars2.png");
+    background-size: cover;
+    background-size: 2000px;
+    background-repeat: repeat-x repeat-y;
 }
 
 .main_header {
@@ -20,10 +30,6 @@
     margin-top: 102px;
     flex: 1;
     // padding: 20px 40px;
-    background-image: url("../public/stars2.png");
-    background-size: 1000px;
-    background-repeat: repeat-x repeat-y;
-    overflow: scroll;
 }
 
 .background_stars_overlay {
@@ -40,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
 }
 
 .header_pages {
@@ -70,28 +77,28 @@
 
 .home_container {
     height: 100%;
-    min-height: 600px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.home_timeline_container{
-    background-color: #103628;
-    background: linear-gradient(100deg, #103628aa 0%, #87d7af11 100%);
-    width: 80%;
-    max-width: 1020px;
-    height: 350px;
+.home_outer {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 0.04rem;
+}
+
+.home_inner {
+    // height: 100%;
+    width: 100%;
+    max-width: 2848px;
+    padding: 40px;
+
 }
 
 .home_title {
-    padding: 40px;
     font-size: 5rem;
     font-style: italic;
     font-weight: 700;
@@ -110,4 +117,20 @@
     background-size: cover;
     margin: -40px 0 0 -220px;
     transform: rotate(10deg);
+}
+
+.parallax_home {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax_discover {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

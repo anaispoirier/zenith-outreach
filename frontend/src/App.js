@@ -6,6 +6,9 @@ import Discover from './Discover';
 import Header from './Header';
 import Home from './Home';
 
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+
+
 // import { pages as initialPages } from './constants';
 
 function App() {
@@ -43,10 +46,10 @@ function App() {
       }
   }
 
-  useEffect(() => {
-    var mainElem = document.getElementById("main");
-    mainElem.addEventListener("scroll", handleScroll());
-  }, [])
+  // useEffect(() => {
+  //   var mainElem = document.getElementById("main");
+  //   mainElem.addEventListener("scroll", handleScroll());
+  // }, [])
 
   
 
@@ -59,10 +62,29 @@ function App() {
           handleChangePage={handleChangePage}
         />
       </div>
-      <div id="main" className={styles.main_content}>
-          {currentPage.element}
-      </div>
+      <Parallax pages={2} style={{ top: '0', left: '0' }}>
+        <ParallaxLayer
+          offset={0}
+          speed={2.5}
+          className={styles.parallax_home}
+        >
+          <div id="main" className={styles.main_content}>
+            <Home />
+          </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={2} style={{ backgroundColor: '#f5f5f5' }} />
+
+        <ParallaxLayer
+          offset={1}
+          speed={0.5}
+          className={styles.parallax_discover}
+        >
+          <Discover />
+        </ParallaxLayer>
+      </Parallax>
     </div>
+    
   );
 }
 
