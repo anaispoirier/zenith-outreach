@@ -7,6 +7,7 @@ import Header from './Header';
 import Home from './Home';
 
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import Contact from './Contact';
 
 // Little helpers ...
 const url = (name, wrap=false) =>
@@ -38,7 +39,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(pages[0]);
   const [scroll, setScroll] = useState(0);
 
-  const ref = useRef();
+  const parallaxRef = useRef();
 
   const handleChangePage = (page) => {
     setCurrentPage(page);
@@ -55,17 +56,29 @@ function App() {
   const onHeaderPageClick = (page) => {
     console.log("PAGE", page);
     setCurrentPage(page);
-    ref.current.scrollTo(page.id);
+    parallaxRef.current.scrollTo(page.id);
   }
+
+  const onScroll = () => {
+    console.log("on scroll")
+    console.log(parallaxRef.current.current / parallaxRef.current.space);
+  }
+
+  useEffect(() => {
+    if (!parallaxRef.current || !parallaxRef.current.container) return
+    parallaxRef.current.container.onscroll = onScroll
+
+    console.log("HERE: setting scroll", parallaxRef.current.container);
+  })
 
   return (
     <div className={styles.main}>
       
-      <Parallax ref={ref} pages={2} style={{ top: '0', left: '0' }}>
+      <Parallax ref={parallaxRef} pages={3} style={{ top: '0', left: '0' }} onScroll={onScroll}>
         
         {/* Header */}
         <ParallaxLayer
-          sticky={{ start: 0 }}
+          sticky={{ start: 0, end: 3 }}
           style={{ height: "auto" }}
         >
           <div className={styles.main_header}>
@@ -82,7 +95,7 @@ function App() {
         <ParallaxLayer
           offset={0}
           speed={0}
-          factor={2}
+          factor={3}
           style={{
             backgroundImage: url('stars', true),
             backgroundSize: 'cover',
@@ -94,7 +107,7 @@ function App() {
         <ParallaxLayer
           offset={0}
           speed={1.5}
-          className={styles.parallax_home}
+          className={styles.parallax}
         >
           <div id="main" className={styles.main_content}>
             <Home />
@@ -108,10 +121,23 @@ function App() {
         <ParallaxLayer
           offset={1}
           speed={1.5}
-          className={styles.parallax_discover}
+          className={styles.parallax}
         >
           <Discover  />
         </ParallaxLayer>
+
+        {/* Contact Offset */}
+        <ParallaxLayer offset={2} speed={0} />
+        
+        {/* Contact Page */}
+        <ParallaxLayer
+          offset={2}
+          speed={1.5}
+          className={styles.parallax}
+        >
+          <Contact  />
+        </ParallaxLayer>
+
       </Parallax>
     </div>
     

@@ -8,7 +8,7 @@ function Home(props) {
             <div className={styles.home_title}>
                 Discover Space
             </div>
-            i am the home page
+            <div className={styles.home_timeline}>timeline</div>
         </div>
     </div>
   );

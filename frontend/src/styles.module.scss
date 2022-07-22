@@ -1,3 +1,9 @@
+.contact_container {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
 .discover_container {
     color: #014465;
     font-size: 2rem;
@@ -9,6 +15,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
     // background-color: #014465;
     // background-color: linear-gradient(180deg, #014465 0%, #1e5661 25%, #80cbc4 100%);
     // background-image: url("../public/stars2.png");
@@ -19,24 +26,13 @@
 
 .main_header {
     padding: 20px;
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // right: 0;
     background-color: #014465;
+    background-color: #00c85355;
 }
 
 .main_content {
     flex: 1;
     // padding: 20px 40px;
-}
-
-.background_stars_overlay {
-    height: 100%;
-    width: 100%;
-    background-image: url("../public/stars2.png");
-    background-size: 1000px;
-    background-repeat: repeat-x repeat-y;
 }
 
 .header_container {
@@ -105,8 +101,14 @@
     padding-bottom: 20px;
 }
 
-.test {
+.home_timeline {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 75%;
+    margin-left: -40px;
+    background-color: lightcoral;
 }
 
 .test_image {
@@ -118,22 +120,14 @@
     transform: rotate(10deg);
 }
 
-.parallax_home {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.parallax_discover {
+.parallax {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    &_bg{
+    &_discover_bg{
         background-color: #f5f5f5;
     }
 }
