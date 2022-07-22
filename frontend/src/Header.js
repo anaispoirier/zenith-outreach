@@ -13,7 +13,7 @@ function Header(props) {
                     <div 
                         key={pg.id}
                         className={styles.header_page} 
-                        onClick={(e)=>props.handleChangePage(pg)}
+                        onClick={(e)=>props.onPageClick(pg)}
                         style={ props.currentPage.id === pg.id ? {fontWeight: 700} : {} }
                     >
                         {pg.title}
